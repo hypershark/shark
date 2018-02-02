@@ -45,16 +45,16 @@ def wangyi():
                 item['recruitNumber'] = recruitNumber
                 item['publishTime'] = publishTime
 
-                items.append(item)
+                tmp.append(item)
             j+=1
         items+=tmp
-
-        i += 1
-        print("sucess"+str(i))        
         count = soup.select('a[class=""]')[5].get_text()
         if int(count) < i:
             print(count)
             break
+
+        print("sucess"+str(i))
+        i += 1        
 
     line = json.dumps(items, ensure_ascii=False)
 
